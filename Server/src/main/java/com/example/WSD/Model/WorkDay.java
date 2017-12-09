@@ -1,10 +1,9 @@
-package com.example.demo.Model;
+package com.example.WSD.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.sql.Time;
 import java.util.Date;
 
 @Entity

@@ -1,4 +1,4 @@
-package com.example.demo.Model;
+package com.example.WSD.Model;
 
 import org.springframework.stereotype.Component;
 

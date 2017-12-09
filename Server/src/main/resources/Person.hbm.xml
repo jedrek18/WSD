@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.example.demo.Model.Person" table="mydb.Person">
+    <class name="com.example.WSD.Model.Person" table="mydb.Person">
         <meta attribute="class-description">
             This class contains the Person detail.
         </meta>
