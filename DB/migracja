@@ -1,0 +1,111 @@
+-- ----------------------------------------------------------------------------
+-- MySQL Workbench Migration
+-- Migrated Schemata: Gates, Server
+-- Source Schemata: Gates, Server
+-- Created: Mon Dec 11 23:05:09 2017
+-- Workbench Version: 6.3.6
+-- ----------------------------------------------------------------------------
+
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------------------------------------------------------
+-- Schema Gates
+-- ----------------------------------------------------------------------------
+DROP SCHEMA IF EXISTS Gates ;
+CREATE SCHEMA IF NOT EXISTS Gates ;
+
+-- ----------------------------------------------------------------------------
+-- Table Gates.Permission
+-- ----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS Gates.Permission (
+  ID_PERMISSION INT(11) NOT NULL,
+  PERM_TYPE VARCHAR(45) NOT NULL,
+  EFF_DT VARCHAR(45) NOT NULL,
+  EX_DT VARCHAR(45) NOT NULL,
+  ID_USER INT(11) NOT NULL,
+  ID_ROOM INT(11) NOT NULL,
+  ID_MAIN_ROOM INT(11) NOT NULL,
+  PRIMARY KEY (ID_PERMISSION),
+  INDEX FK_ROOM_idx (ID_ROOM ASC),
+  CONSTRAINT FK_ROOM
+    FOREIGN KEY (ID_ROOM)
+    REFERENCES Gates.Room (ID_ROOM)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+-- ----------------------------------------------------------------------------
+-- Table Gates.Room
+-- ----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS Gates.Room (
+  ID_ROOM INT(11) NOT NULL,
+  TYPE VARCHAR(45) NULL DEFAULT NULL,
+  NUMBER VARCHAR(45) NOT NULL,
+  LOCATION VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (ID_ROOM))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+-- ----------------------------------------------------------------------------
+-- Schema Server
+-- ----------------------------------------------------------------------------
+DROP SCHEMA IF EXISTS Server ;
+CREATE SCHEMA IF NOT EXISTS Server ;
+
+-- ----------------------------------------------------------------------------
+-- Table Server.Permission
+-- ----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS Server.Permission (
+  ID_PERMISSION INT(11) NOT NULL,
+  PERM_TYPE VARCHAR(45) NULL DEFAULT NULL,
+  EFF_DT DATE NULL DEFAULT NULL,
+  EX_DT DATE NULL DEFAULT NULL,
+  ID_USER INT(11) NULL DEFAULT NULL,
+  ID_ROOM INT(11) NULL DEFAULT NULL,
+  PRIMARY KEY (ID_PERMISSION),
+  INDEX fk_Permission_1_idx (ID_USER ASC),
+  INDEX FK_ROOM_idx (ID_ROOM ASC),
+  CONSTRAINT FK_ROOM
+    FOREIGN KEY (ID_ROOM)
+    REFERENCES Server.Room (ID_ROOM)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT FK_USER
+    FOREIGN KEY (ID_USER)
+    REFERENCES Server.User (ID_USER)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+-- ----------------------------------------------------------------------------
+-- Table Server.Room
+-- ----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS Server.Room (
+  ID_ROOM INT(11) NOT NULL,
+  TYPE VARCHAR(45) NULL DEFAULT NULL,
+  NUMBER VARCHAR(45) NOT NULL,
+  LOCATION VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (ID_ROOM))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+-- ----------------------------------------------------------------------------
+-- Table Server.User
+-- ----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS Server.User (
+  ID_USER INT(11) NOT NULL,
+  USER_NAME VARCHAR(100) NOT NULL,
+  FIRST_NAME VARCHAR(100) NOT NULL,
+  LAST_NAME VARCHAR(100) NOT NULL,
+  PASSWORD VARCHAR(100) NOT NULL,
+  MAIL VARCHAR(100) NULL DEFAULT NULL,
+  FUNCTION VARCHAR(100) NULL DEFAULT NULL,
+  SID VARCHAR(100) NOT NULL,
+  PRIMARY KEY (ID_USER),
+  UNIQUE INDEX USER_NAME_UNIQUE (USER_NAME ASC),
+  UNIQUE INDEX SID_UNIQUE (SID ASC))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+SET FOREIGN_KEY_CHECKS = 1;
