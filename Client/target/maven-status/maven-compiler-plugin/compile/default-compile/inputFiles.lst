@@ -1,0 +1,7 @@
+/home/kamil/Dokumenty/WSD/Client/src/main/java/com/mkyong/common/App.java
+/home/kamil/Dokumenty/WSD/Client/src/main/java/com/mkyong/stock/dao/impl/ClientDao.java
+/home/kamil/Dokumenty/WSD/Client/src/main/java/com/mkyong/stock/model/Permission.java
+/home/kamil/Dokumenty/WSD/Client/src/main/java/com/mkyong/util/CustomHibernateDaoSupport.java
+/home/kamil/Dokumenty/WSD/Client/src/main/java/com/mkyong/stock/dao/impl/ClientDaoImpl.java
+/home/kamil/Dokumenty/WSD/Client/src/main/java/com/mkyong/stock/bo/impl/ClientBoImpl.java
+/home/kamil/Dokumenty/WSD/Client/src/main/java/com/mkyong/stock/model/Config.java

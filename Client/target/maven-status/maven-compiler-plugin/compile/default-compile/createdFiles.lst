@@ -1,0 +1,7 @@
+com/mkyong/util/CustomHibernateDaoSupport.class
+com/mkyong/common/App.class
+com/mkyong/stock/bo/impl/ClientBoImpl.class
+com/mkyong/stock/model/Permission.class
+com/mkyong/stock/model/Config.class
+com/mkyong/stock/dao/impl/ClientDao.class
+com/mkyong/stock/dao/impl/ClientDaoImpl.class
