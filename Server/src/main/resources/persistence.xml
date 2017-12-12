@@ -4,5 +4,9 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
                 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
-    <persistence-unit name="stadto"></persistence-unit>
+    <persistence-unit name="stadto">
+        <class>com.example.WSD.Model.Permission</class>
+        <class>com.example.WSD.Model.User</class>
+        <class>com.example.WSD.Model.Room</class>
+    </persistence-unit>
 </persistence>

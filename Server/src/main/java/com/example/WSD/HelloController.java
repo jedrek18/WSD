@@ -2,21 +2,15 @@ package com.example.WSD;
 
 import com.example.WSD.DAO.TemplateDAO;
 import com.example.WSD.Model.*;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import javax.transaction.TransactionManager;
 import java.text.ParseException;
 import java.util.Date;
@@ -26,6 +20,8 @@ public class HelloController {
 
 
     TemplateDAO templateDAO;
+
+
 
     public TemplateDAO getTemplateDAO() {
         return templateDAO;

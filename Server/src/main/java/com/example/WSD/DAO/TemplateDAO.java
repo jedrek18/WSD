@@ -1,13 +1,17 @@
 package com.example.WSD.DAO;
 
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Repository;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 @Repository
 public class TemplateDAO {
 
     JdbcTemplate jdbcTemplate;
+
+
 
     public TemplateDAO() {
     }

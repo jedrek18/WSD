@@ -109,3 +109,27 @@ CREATE TABLE IF NOT EXISTS Server.User (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 SET FOREIGN_KEY_CHECKS = 1;
+
+
+---------------------------------------------------
+CREATE DATABASE Client;
+CREATE TABLE Config (
+  ID_CONFIG int(11) NOT NULL,
+  USER_NAME varchar(100) DEFAULT NULL,
+  SID varchar(100) DEFAULT NULL,
+  FIRST_NAME varchar(100) DEFAULT NULL,
+  SECOND_NAME varchar(100) DEFAULT NULL,
+  PASSWORD varchar(100) DEFAULT NULL,
+  PRIMARY KEY (ID_CONFIG)
+) ;
+
+CREATE TABLE Permission (
+  ID_PERMISSION int(11) NOT NULL,
+  ROOM_NUMBER varchar(100) DEFAULT NULL,
+  EFF_DT date DEFAULT NULL,
+  EX_DT date DEFAULT NULL,
+  PERM_TYPE varchar(100) DEFAULT NULL,
+  PERM_TOKEN varchar(100) DEFAULT NULL,
+  PRIMARY KEY (ID_PERMISSION)
+) ;
+-------------------------------------------
