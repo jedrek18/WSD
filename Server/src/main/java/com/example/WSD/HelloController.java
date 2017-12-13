@@ -22,7 +22,6 @@ public class HelloController {
     TemplateDAO templateDAO;
 
 
-
     public TemplateDAO getTemplateDAO() {
         return templateDAO;
     }
@@ -53,6 +52,7 @@ public class HelloController {
 //        Query query2 = session.createQuery(hql2);
 //        Query query3 = session.createQuery(hql3);
 //        factory.close();
+        templateDAO.test();
         return "123";
     }
 }

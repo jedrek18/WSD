@@ -8,7 +8,6 @@ import javax.persistence.PersistenceContext;
 
 @SpringBootApplication
 @ImportResource("applicationContext.xml")
-
 public class SpringhibDemoApplication {
 
 

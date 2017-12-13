@@ -66,5 +66,44 @@
         <!--<property name="generateDdl" value="true"/>-->
         <!--<property name="databasePlatform" value="org.hibernate.dialect.MySQLDialect"/>-->
     <!--</bean>-->
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource">
+            <ref bean="dataSource"/>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+
+        <property name="annotatedClasses">
+            <list>
+                <value>com.example.WSD.Model.User</value>
+                <value>com.example.WSD.Model.Permission</value>
+                <value>com.example.WSD.Model.Room</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="transactionManager"
+    class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+    <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <bean id="helloController" class="com.example.WSD.HelloController">
+        <property name="templateDAO" ref="templateDAO"/>
+    </bean>
+
+    <bean id="templateDAO" class="com.example.WSD.DAO.TemplateDAO">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
 </beans>
 
