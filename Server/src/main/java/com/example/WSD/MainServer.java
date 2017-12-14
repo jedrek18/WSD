@@ -16,8 +16,8 @@ public class MainServer {
     public MainServer() {
         ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         //TemplateDAO templateDAO2 = (TemplateDAO) ctx.getBean("templateDAO");
-        JdbcTemplate temp = (JdbcTemplate) appContext.getBean(JdbcTemplate.class);
-        temp.queryForList("select * from Room");
+        TemplateDAO temp = (TemplateDAO) appContext.getBean(TemplateDAO.class);
+        temp.initDate();
         int x = 1;
     }
 

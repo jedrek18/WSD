@@ -1,7 +1,8 @@
 package com.example.WSD.Model;
 
 public enum RoomType {
-    t1,
-    t2,
-    t3
+    Sala_wykladowa,
+    Sala_cwiczeniowa,
+    Sala_labolatoryjna,
+    Pracownia_komputerowa
 }
