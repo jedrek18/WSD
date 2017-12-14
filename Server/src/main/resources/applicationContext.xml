@@ -12,9 +12,9 @@
 
 
 <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-<property name="url" value="jdbc:MySql://localhost:3306/Server" />
+<property name="url" value="jdbc:mysql://localhost:3306/Server" />
 <property name="username" value="root" />
-<property name="password" value="rootroot" />
+<property name="password" value="RootRoot1$" />
 </bean>
 
     <context:annotation-config />
