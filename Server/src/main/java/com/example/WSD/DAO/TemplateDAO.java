@@ -4,14 +4,14 @@ import com.example.WSD.Model.*;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.Date;
 
+@Repository
 public class TemplateDAO {
 
     JdbcTemplate jdbcTemplate;
@@ -37,13 +37,15 @@ public class TemplateDAO {
         this.sessionFactory = sessionFactory;
     }
 
-    public void test(){
+    public void doSomething(){
+        int i=1;
+        int l=2;
+        int l2=3;
         Session session = sessionFactory.openSession();
-       User user =new User(2L,"K4","Kamil","Witkacy","a12@o2.pl","robotnik","root","12345");
+        User user =new User(2L,"K4","Kamil","Witkacy","a12@o2.pl","robotnik","root","12345");
         Room room = new Room(1l, RoomType.t1,"C104","EITI");
-        //Permission permission= new Permission(1l, PermType.normal,new Date("2012-01-13"),new Date("2019-01-13"),user,room);
-        session.save(user);
-        session.save(room);
+        Permission permission= new Permission(1l, PermType.normal,new Date("2012-01-13"),new Date("2019-01-13"),user,room,room);
+        session.save(permission);
         session.flush();
         String hql = "FROM User";
         String hql2 = "FROM Permission";
@@ -51,6 +53,11 @@ public class TemplateDAO {
         Query query = session.createQuery(hql);
         Query query2 = session.createQuery(hql2);
         Query query3 = session.createQuery(hql3);
-        int i=1;
     }
+
+    public Session getNewSession(){
+        return sessionFactory.openSession();
+    }
+
+
 }

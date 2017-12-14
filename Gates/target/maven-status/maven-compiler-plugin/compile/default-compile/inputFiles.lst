@@ -1,3 +1,8 @@
-/home/kamil/Dokumenty/WSD/Gates/src/main/java/com/example/WSD/mainGate.java
-/home/kamil/Dokumenty/WSD/Gates/src/main/java/com/example/WSD/GateController.java
+/home/kamil/Dokumenty/WSD/Gates/src/main/java/com/example/WSD/Model/PermType.java
+/home/kamil/Dokumenty/WSD/Gates/src/main/java/com/example/WSD/Model/RoomType.java
+/home/kamil/Dokumenty/WSD/Gates/src/main/java/com/example/WSD/Model/Room.java
+/home/kamil/Dokumenty/WSD/Gates/src/main/java/com/example/WSD/Model/User.java
 /home/kamil/Dokumenty/WSD/Gates/src/main/java/com/example/WSD/Service/TestService.java
+/home/kamil/Dokumenty/WSD/Gates/src/main/java/com/example/WSD/DAO/TemplateDAO.java
+/home/kamil/Dokumenty/WSD/Gates/src/main/java/com/example/WSD/MainGate.java
+/home/kamil/Dokumenty/WSD/Gates/src/main/java/com/example/WSD/Model/Permission.java

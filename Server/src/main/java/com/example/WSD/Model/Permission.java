@@ -14,18 +14,20 @@ public class Permission {
     Date expiredDate;
     User ownerUser;
     Room room;
+    Room roomOwner;
 
     public Permission(){
 
     }
 
-    public Permission(Long id, PermType permType, Date effectiveDate, Date expiredDate, User ownerUser, Room room) {
+    public Permission(Long id, PermType permType, Date effectiveDate, Date expiredDate, User ownerUser, Room room, Room roomOwner) {
         this.id = id;
         this.permType = permType;
         this.effectiveDate = effectiveDate;
         this.expiredDate = expiredDate;
         this.ownerUser = ownerUser;
         this.room = room;
+        this.roomOwner = roomOwner;
     }
 
     @Id
@@ -59,6 +61,11 @@ public class Permission {
     @JoinColumn(name = "ID_ROOM", nullable = false, insertable = false, updatable = false)
     public Room getRoom() {
         return room;
+    }
+
+
+    public void setRoomOwner(Room roomOwner) {
+        this.roomOwner = roomOwner;
     }
 
     public void setId(Long id) {

@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 import javax.transaction.TransactionManager;
 
-@Component
 public class TestService {
     TransactionManager transactionManager;
 

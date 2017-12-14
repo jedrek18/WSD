@@ -1,3 +1,8 @@
-com/example/WSD/mainGate.class
+com/example/WSD/MainGate.class
+com/example/WSD/Model/User.class
+com/example/WSD/DAO/TemplateDAO.class
+com/example/WSD/Model/PermType.class
 com/example/WSD/Service/TestService.class
-com/example/WSD/GateController.class
+com/example/WSD/Model/Room.class
+com/example/WSD/Model/RoomType.class
+com/example/WSD/Model/Permission.class
